@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%block title%}{% endblock %}
+    </title>
+</head>
+<body>
+<form action = '{% url "main_page" %}' method="post">
+<p><input type = "submit" value = "Order" name = "order"/></p>
+    </form>
+{%block content%}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%block title%}Order Page{%endblock%}
+{%block content%}
+{{ valid }}
+<form action = '{% url "order" %}' method="post">
+
+<p></p>
+Your card:
+{% for beer in beers %}
+
+        <p></p>
+        {{ beer.beer}} -- Value: {{beer.value}}
+        <input type="text" value="{{beer.id}}" name = 'id' hidden="true">
+        <input type="submit" value="Delete" name = 'delete'>
+        <p></p>
+
+{%endfor%}
+    Enter your name: <input type="text" name='name_1'>
+Enter your address: <input type="text" name='address'>
+    <input type="submit" value="Confirm" name="confirm">
+<input type="submit" value="Back" name="back"></form>
+{%endblock%}

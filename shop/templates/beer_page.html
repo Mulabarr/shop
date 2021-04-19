@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block title%}Beer Page{%endblock%}
+{%block content%}
+{{ valid }}
+{% for beer in beers %}
+    <form action = '{% url "beer_page" sort %}' method="post">
+        <p></p>
+        {{ beer.beer_name}} -- <input type = 'number' value="1" name="number">
+        <input type = "submit" value="Add to card" name = '{{ beer.beer_name }}'>
+        <p></p>
+    </form>
+
+{%endfor%}
+<form action = '{% url "beer_page" sort %}' method="post">
+<input type="submit" value="Back" name="back"></form>
+{%endblock%}

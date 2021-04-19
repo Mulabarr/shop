@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{%block title%}{%endblock%}
+{%block content%}
+SUCCESS
+<p></p>
+<form action = '{% url "order" %}' method="post">
+    <input type = "submit" value="Back to main page" name = 'back'>
+</form>
+{%endblock%}

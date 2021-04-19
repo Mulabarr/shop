@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%block title%}Main Page{%endblock%}
+{%block content%}
+{{ valid }}
+Sorts of beer:
+{% for sort in sorts %}
+    <form action = '{% url "main_page" %}' method="post">
+        <input type = "submit" value="{{ sort.name }}" name = 'sort_name'>
+    </form>
+{%endfor%}
+{%endblock%}
